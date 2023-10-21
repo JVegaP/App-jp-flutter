@@ -1,0 +1,124 @@
+import 'package:flutter/material.dart';
+import 'package:jp_app_flutter/core/constants/app_constants.dart';
+import 'package:jp_app_flutter/core/constants/color_constants.dart';
+import 'package:jp_app_flutter/core/constants/routes_constants.dart';
+import 'package:jp_app_flutter/core/constants/strings_constants.dart';
+import 'package:jp_app_flutter/core/constants/style_constants.dart';
+import 'package:jp_app_flutter/core/constants/widget_constants.dart';
+import 'package:jp_app_flutter/core/di/dependency_injection_config.dart';
+import 'package:jp_app_flutter/core/managers/routes_manager.dart';
+import 'package:jp_app_flutter/core/themes/app_theme.dart';
+import 'package:jp_app_flutter/presentation/providers/splash/splash_provider.dart';
+import 'package:jp_app_flutter/presentation/widgets/widget_background.dart';
+import 'package:jp_app_flutter/presentation/widgets/widget_text_label.dart';
+import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({
+    Key? key
+  }): super(key: key);
+
+  @override
+  SplashScreenState createState() => SplashScreenState();
+}
+
+class SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+  SplashProvider state = getIt<SplashProvider>();
+
+  @override
+  void initState() {
+    state = Provider.of<SplashProvider>(context, listen: false);
+    WidgetsBinding.instance.addPostFrameCallback((_) async{
+      _setUpView();
+    });
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    state = Provider.of<SplashProvider>(context, listen: true);
+    return Scaffold(
+      backgroundColor: kWhite,
+      body: _mainContainer()
+    );
+  }
+
+  ///--------------------------------- PRIVATE METHODS --------------------------------///
+
+  /// Method create structure base of view
+  Widget _mainContainer() {
+    return Stack(
+      children: [
+        const WidgetBackground(key: Key(kWidgetBackground), colorBackground: kWhite),
+        Center(
+          child: Stack(
+            children: [
+              AnimatedOpacity(
+                opacity: state.opacityAnimation,
+                duration: const Duration(milliseconds: kDurationMs1000),
+                curve: Curves.linear,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: kDimens150),
+                  child: Center(
+                    child: Lottie.asset(
+                      kAnimationSplash,
+                      height: kDimens200,
+                      width: kDimens200,
+                      fit: BoxFit.contain,
+                      repeat: false,
+                    ),
+                  ),
+                ),
+              ),
+              AnimatedOpacity(
+                opacity: state.opacityText,
+                duration: const Duration(milliseconds: kDurationMs1500),
+                curve: Curves.linear,
+                child: Center(
+                  child: WidgetTextLabel(
+                    key: const Key(kWidgetTextLabelTitleSplash),
+                    text: kNameApp,
+                    textAlign: TextAlign.center,
+                    textStyle: AppTheme.getAppTheme().textTheme.bodyLarge?.copyWith(
+                        color: kPrimary,
+                        fontSize: kDimens40
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        )
+      ],
+    );
+  }
+
+  /// Method that setup the initial information of the view
+  void _setUpView() {
+    _showText();
+    _hideAnimation();
+    _goToHome();
+  }
+
+  /// Method that show text splash
+  _showText() async {
+    await Future.delayed( const Duration(milliseconds: kDurationMs1000),(){
+      state.opacityText = kWithOpacity;
+    });
+  }
+
+  /// Method that hide animation splash
+  _hideAnimation() async {
+    await Future.delayed( const Duration(milliseconds: kDurationMs2500),(){
+      state.opacityAnimation = kWithoutOpacity;
+    });
+  }
+
+  /// Method that navigate to login screen
+  _goToHome() async {
+    await Future.delayed( const Duration(milliseconds: kDurationMs3000),(){
+      route.openHomeScreen(context);
+    });
+  }
+}
