@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jp_app_flutter/core/themes/app_theme.dart';
+import 'package:jp_app_flutter/presentation/providers/login/login_provider.dart';
 import 'package:jp_app_flutter/presentation/providers/splash/splash_provider.dart';
 import 'package:jp_app_flutter/presentation/screens/splash/splash_screen.dart';
 import 'package:provider/provider.dart';
@@ -25,6 +26,7 @@ class JpAppState extends State<JpApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => SplashProvider()),
+        ChangeNotifierProvider(create: (_) => LoginProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

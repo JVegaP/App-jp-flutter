@@ -11,17 +11,17 @@ class AppTheme {
       ),
       primaryColor: kPrimary,
         textTheme: TextTheme(
-          bodyLarge: GoogleFonts.lilitaOne(
+          bodyLarge: GoogleFonts.poppins(
               color: kBlack,
               fontWeight: FontWeight.w600,
               fontSize: kDimens20
           ),
-          bodyMedium: GoogleFonts.lilitaOne(
+          bodyMedium: GoogleFonts.poppins(
               color: kBlack,
               fontWeight: FontWeight.w400,
               fontSize: kDimens15
           ),
-          bodySmall: GoogleFonts.lilitaOne(
+          bodySmall: GoogleFonts.poppins(
               color: kBlack,
               fontWeight: FontWeight.w400,
               fontSize: kDimens12

@@ -1,0 +1,16 @@
+{
+  "code" : 200,
+  "message" : "Respuesta exitosa",
+  "data" : [
+    {
+      "full_name" : "Julian Vega",
+      "email" : "jvega@gmail.com",
+      "password" : "pruebaflutter"
+    },
+    {
+      "full_name" : "User Test",
+      "email" : "test@gmail.com",
+      "password" : "justplay"
+    }
+  ]
+}

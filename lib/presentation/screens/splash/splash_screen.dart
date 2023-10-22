@@ -8,6 +8,7 @@ import 'package:jp_app_flutter/core/constants/widget_constants.dart';
 import 'package:jp_app_flutter/core/di/dependency_injection_config.dart';
 import 'package:jp_app_flutter/core/managers/routes_manager.dart';
 import 'package:jp_app_flutter/core/themes/app_theme.dart';
+import 'package:jp_app_flutter/core/utils/utils.dart';
 import 'package:jp_app_flutter/presentation/providers/splash/splash_provider.dart';
 import 'package:jp_app_flutter/presentation/widgets/widget_background.dart';
 import 'package:jp_app_flutter/presentation/widgets/widget_text_label.dart';
@@ -23,7 +24,7 @@ class SplashScreen extends StatefulWidget {
   SplashScreenState createState() => SplashScreenState();
 }
 
-class SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class SplashScreenState extends State<SplashScreen> {
   SplashProvider state = getIt<SplashProvider>();
 
   @override
@@ -95,30 +96,30 @@ class SplashScreenState extends State<SplashScreen> with SingleTickerProviderSta
   }
 
   /// Method that setup the initial information of the view
-  void _setUpView() {
+  _setUpView() {
     _showText();
     _hideAnimation();
-    _goToHome();
+    _goToLogin();
   }
 
   /// Method that show text splash
-  _showText() async {
-    await Future.delayed( const Duration(milliseconds: kDurationMs1000),(){
+  _showText() {
+    functionDelay(timeDuration: kDurationMs1000, function:() {
       state.opacityText = kWithOpacity;
     });
   }
 
   /// Method that hide animation splash
-  _hideAnimation() async {
-    await Future.delayed( const Duration(milliseconds: kDurationMs2500),(){
+  _hideAnimation() {
+    functionDelay(timeDuration: kDurationMs2500, function:() {
       state.opacityAnimation = kWithoutOpacity;
     });
   }
 
   /// Method that navigate to login screen
-  _goToHome() async {
-    await Future.delayed( const Duration(milliseconds: kDurationMs3000),(){
-      route.openHomeScreen(context);
+  _goToLogin() {
+    functionDelay(timeDuration: kDurationMs3000, function:() {
+      route.openLoginScreen(context);
     });
   }
 }
