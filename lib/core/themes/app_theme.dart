@@ -9,6 +9,10 @@ class AppTheme {
       colorScheme: const ColorScheme.light(
           background: kWhite
       ),
+      appBarTheme: const AppBarTheme(
+        color: kPrimary,
+
+      ),
       primaryColor: kPrimary,
         textTheme: TextTheme(
           bodyLarge: GoogleFonts.poppins(

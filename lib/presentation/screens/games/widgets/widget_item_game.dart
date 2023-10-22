@@ -11,6 +11,7 @@ import 'package:jp_app_flutter/presentation/widgets/widget_text_label.dart';
 class WidgetItemGame extends StatefulWidget {
   final GameModel _item;
   final Function() _onTap;
+
   const WidgetItemGame({
     required Key key,
     required GameModel item,
@@ -35,16 +36,16 @@ class _WidgetItemGame extends State<WidgetItemGame> {
             widget._onTap();
           },
           child: Container(
-            decoration: const BoxDecoration(
+            decoration:  const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(kDimens15)),
               boxShadow: [
                 BoxShadow(
                     blurRadius: kDimens10,
                     color: kShadowLight,
-                    offset: Offset(kDimens2, kDimens5)
+                    offset: Offset(kDimens1, kDimens2)
                 )
               ],
-              color: kWhite,
+              color: kWhite
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: kDimens10, horizontal: kDimens15),
@@ -57,6 +58,10 @@ class _WidgetItemGame extends State<WidgetItemGame> {
                       width: kDimens100,
                       decoration: BoxDecoration(
                           borderRadius: const BorderRadius.all(Radius.circular(kDimens15)),
+                          border: Border.all(
+                            width: kDimens05,
+                            color: kGray
+                          ),
                           color: kGray.withOpacity(kDimens05),
                           image: DecorationImage(
                             image: NetworkImage(urlImage()),
@@ -74,6 +79,10 @@ class _WidgetItemGame extends State<WidgetItemGame> {
                         WidgetTextLabel(
                           key: const Key(kWidgetTextLabelTitleItemGame),
                           text: widget._item.title,
+                          textStyle: AppTheme.getAppTheme().textTheme.bodyMedium?.copyWith(
+                            fontWeight: FontWeight.w800,
+                            fontSize: kDimens13
+                          ),
                           textAlign: TextAlign.start,
                           maxLines: 2,
                         ),
@@ -83,7 +92,8 @@ class _WidgetItemGame extends State<WidgetItemGame> {
                           text: widget._item.description,
                           textAlign: TextAlign.start,
                           textStyle: AppTheme.getAppTheme().textTheme.bodySmall?.copyWith(
-                              color: kGray
+                              color: kGray,
+                              fontSize: kDimens11
                           ),
                           maxLines: 4,
                         ),
@@ -93,8 +103,7 @@ class _WidgetItemGame extends State<WidgetItemGame> {
                 ],
               ),
             ),
-          ),
-
+          )
         ),
         const SizedBox(height: kDimens20)
       ],

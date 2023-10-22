@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:jp_app_flutter/core/constants/color_constants.dart';
 import 'package:jp_app_flutter/core/themes/app_theme.dart';
 import 'package:jp_app_flutter/presentation/providers/cities/cities_provider.dart';
 import 'package:jp_app_flutter/presentation/providers/games/games_provider.dart';
@@ -25,6 +27,9 @@ class JpAppState extends State<JpApp> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: kPrimary.withOpacity(.9))
+    );
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => SplashProvider()),

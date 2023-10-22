@@ -12,7 +12,6 @@ class GamesProvider with ChangeNotifier {
     GetGamesUseCase? getGamesUseCase
   }): _getGamesUseCase = getGamesUseCase ?? getIt<GetGamesUseCase>();
 
-
   bool _isLoading = false;
   bool get isLoading {
     return _isLoading;

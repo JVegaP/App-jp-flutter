@@ -1,5 +1,5 @@
 /// Splash
-const String kNameApp = "JUST PLAY";
+const String kNameApp = "Just Play";
 
 /// Login
 const String kLogin = "Login";

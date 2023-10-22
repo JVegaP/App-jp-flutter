@@ -72,8 +72,7 @@ class GamesScreenState extends State<GamesScreen> {
                   return WidgetItemGame(
                       key: const Key(kWidgetItemGames),
                       item: state.games.elementAt(index),
-                      onTap: () {
-                      }
+                      onTap: () {}
                   );
                 }
             ),

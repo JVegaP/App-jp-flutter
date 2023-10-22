@@ -20,7 +20,7 @@ class LoginProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  bool _showPassword = false;
+  bool _showPassword = true;
   bool get showPassword {
     return _showPassword;
   }
