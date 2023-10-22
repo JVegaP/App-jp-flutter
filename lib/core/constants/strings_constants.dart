@@ -11,3 +11,6 @@ const String kErrorMessageLogin = "It was not possible to log in. Try again";
 const String kCities = "Cities";
 const String kContinue = "Continue";
 const String kErrorMessageCities = "It was not possible to obtain the cities";
+
+/// Games
+const String kGames = "Games";

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jp_app_flutter/core/constants/style_constants.dart';
 import 'package:jp_app_flutter/presentation/screens/cities/cities_screen.dart';
+import 'package:jp_app_flutter/presentation/screens/games/games_screen.dart';
 import 'package:jp_app_flutter/presentation/screens/login/login_screen.dart';
 
 final route = RoutesManager();
@@ -50,7 +51,7 @@ class RoutesManager {
     Navigator.of(context).push(PageRouteBuilder(
       opaque: true,
       pageBuilder: (context, animation, secondaryAnimation) {
-        return const CitiesScreen();
+        return const GamesScreen();
       },
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(kDimens1, kDimens0);

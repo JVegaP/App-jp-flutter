@@ -17,3 +17,10 @@ const String kWidgetButtonLogin = "widgetButtonLogin";
 const String kWidgetTextLabelTitleCities = "widgetTextLabelTitleCities";
 const String kWidgetItemCities = "widgetItemCities";
 const String kWidgetButtonContinueCities = "widgetButtonContinueCities";
+
+/// Games
+const String kWidgetTextLabelTitleGames = "widgetTextLabelTitleGames";
+const String kWidgetItemGames = "widgetItemGames";
+const String kWidgetTextLabelTitleItemGame = "widgetTextLabelTitleItemGame";
+const String kWidgetTextLabelIsbnItemGame = "widgetTextLabelIsbnItemGame";
+const String kWidgetTextLabelDescriptionItemGame = "widgetTextLabelDescriptionItemGame";
