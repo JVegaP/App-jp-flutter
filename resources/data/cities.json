@@ -1,0 +1,30 @@
+{
+  "code" : 200,
+  "message" : "Respuesta exitosa",
+  "data" : [
+    {
+      "id" : 1,
+      "name" : "Bogotá"
+    },
+    {
+      "id" : 2,
+      "name" : "Medellin"
+    },
+    {
+      "id" : 3,
+      "name" : "Bucaramanga"
+    },
+    {
+      "id" : 4,
+      "name" : "Cali"
+    },
+    {
+      "id" : 5,
+      "name" : "Barranquilla"
+    },
+    {
+      "id" : 6,
+      "name" : "Cartagena"
+    }
+  ]
+}

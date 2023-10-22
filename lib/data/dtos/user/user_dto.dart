@@ -1,4 +1,3 @@
-
 class UserDTO {
   String? fullName;
   String? email;

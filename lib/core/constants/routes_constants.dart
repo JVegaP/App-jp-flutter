@@ -11,3 +11,4 @@ const String kIconShowPwd = "${kImagesPath}icon_show_pwd.svg";
 
 /// Data
 const String kDataUsers = "${kDataPath}users.json";
+const String kDataCities = "${kDataPath}cities.json";

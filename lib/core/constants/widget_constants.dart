@@ -12,3 +12,8 @@ const String kWidgetTextFieldEmail = "widgetTextFieldEmail";
 const String kWidgetTextFieldPassword = "widgetTextFieldPassword";
 const String kWidgetIconShowPassword = "widgetIconShowPassword";
 const String kWidgetButtonLogin = "widgetButtonLogin";
+
+/// Cities
+const String kWidgetTextLabelTitleCities = "widgetTextLabelTitleCities";
+const String kWidgetItemCities = "widgetItemCities";
+const String kWidgetButtonContinueCities = "widgetButtonContinueCities";

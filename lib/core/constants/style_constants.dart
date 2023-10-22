@@ -1,4 +1,5 @@
 /// Dimens
+const double kDimensLess1 = -1;
 const double kDimens0 = 0;
 const double kDimens05 = 0.5;
 const double kDimens1 = 1;
@@ -15,5 +16,6 @@ const double kDimens22 = 22;
 const double kDimens30 = 30;
 const double kDimens40 = 40;
 const double kDimens50 = 50;
+const double kDimens60 = 60;
 const double kDimens150 = 150;
 const double kDimens200 = 200;

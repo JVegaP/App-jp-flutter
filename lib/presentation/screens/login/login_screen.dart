@@ -6,6 +6,7 @@ import 'package:jp_app_flutter/core/constants/strings_constants.dart';
 import 'package:jp_app_flutter/core/constants/style_constants.dart';
 import 'package:jp_app_flutter/core/constants/widget_constants.dart';
 import 'package:jp_app_flutter/core/di/dependency_injection_config.dart';
+import 'package:jp_app_flutter/core/managers/routes_manager.dart';
 import 'package:jp_app_flutter/core/themes/app_theme.dart';
 import 'package:jp_app_flutter/core/utils/strings_utils.dart';
 import 'package:jp_app_flutter/core/utils/utils.dart';
@@ -196,7 +197,7 @@ class LoginScreenState extends State<LoginScreen> {
               password: _passwordTextController.text
           ).then((bool isLogged) {
             if(isLogged) {
-
+              route.openCitiesScreen(context);
             }
           }).whenComplete(() => state.isLoading = false);
         }
